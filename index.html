@@ -16,14 +16,11 @@
       <a href="https://github.com/multunus/onemdm-server" class="btn">View on GitHub</a>
       <a href="https://github.com/multunus/onemdm-server/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/multunus/onemdm-server/tarball/master" class="btn">Download .tar.gz</a>
-      <p class="project-tagline">For one hour of free consulting on MDM,
-      <a href="https://onemdm.typeform.com/to/ueA3Le" target="_blank" class="contact-us">contact us</a>
-      </p>
     </section>
 
     <section class="main-content">
       <h1>
-<a id="onemdm-server" class="anchor" href="#onemdm-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>onemdm-server</h1>
+<a id="onemdm-server" class="anchor" href="#onemdm-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>OneMDM Server</h1>
 
 <p><a href="https://codeclimate.com/github/multunus/onemdm-server"><img src="https://codeclimate.com/github/multunus/onemdm-server/badges/gpa.svg" alt="Code Climate"></a></p>
 
@@ -47,9 +44,42 @@
 <p>OneMDM is an open source Mobile Device Management (MDM) solution. OneMDM can manage widely distributed android devices which are enrolled in the OneMDM server after installing OneMDM client on these devices.</p>
 
 <h2>
-<a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick start</h2>
+<a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick Start</h2>
 
-<p>Work-In-Progress</p>
+<p>Eager to get started? This section gives a good introduction to set up OneMDM and run the server on your local machine.</p>
+
+<h4>
+<a id="setting-up-onemdm-server" class="anchor" href="#setting-up-onemdm-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up OneMDM Server</h4>
+
+<p>OneMDM server uses PostgreSQL as database. Install PostgreSQL if it is not installed already:</p>
+
+<div class="highlight highlight-source-shell"><pre>sudo apt-get install postgresql postgresql-contrib postgresql-server-dev-9.3</pre></div>
+
+<p>Clone the repo and install the gems:</p>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/multunus/onemdm-server.git
+<span class="pl-c1">cd</span> onemdm-server
+bundle install</pre></div>
+
+<p>Create <code>database.yml</code>. And example file is provided in the <code>config</code> directory. Also, update the PostgreSQL username and password in the file:</p>
+
+<div class="highlight highlight-source-shell"><pre>cp config/database.yml.example config/database.yml</pre></div>
+
+<p>Create and migrate database:</p>
+
+<div class="highlight highlight-source-shell"><pre>rake db:create
+rake db:migrate</pre></div>
+
+<p>Run the server:</p>
+
+<div class="highlight highlight-source-shell"><pre>rails s</pre></div>
+
+<p>Now head over to <a href="http://localhost:3000/admin">http://localhost:3000/admin</a>, and you see your OneMDM dashboard.</p>
+
+<h4>
+<a id="setting-up-onemdm-client" class="anchor" href="#setting-up-onemdm-client" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up OneMDM Client</h4>
+
+<p>One MDM Client is the android application to run on the client device to communicate with the One MDM Server. Follow these <a href="https://github.com/multunus/onemdm-client/blob/master/README.md">instructions to set up OneMDM Client</a></p>
 
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
