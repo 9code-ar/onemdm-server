@@ -248,3 +248,13 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+#mc_embed_signup .email {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: black;
+  transition: box-shadow 0.3s, border 0.3s;
+  width: 50%;
+}
